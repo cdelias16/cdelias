@@ -19,11 +19,34 @@
 <script async
 src="https://www.googletagmanager.com/gtag/js?id=G-WCSMNLNT24"></script>
 <script>
+function getRandomTenDigitNumber() {
+    return Math.floor(1000000000 + Math.random() * 9000000000);
+}
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-WCSMNLNT24'); // GA4
 gtag('config', 'AW-16845493000'); // Google Ads
+gtag('event', 'conversion', {
+      'send_to': 'AW-16845493000/X7QJCIrYlpcaEIimx-A-',
+      'value': 1.0,
+      'currency': 'EUR',
+      'transaction_id': getRandomTenDigitNumber()
+  });
+gtag("event", "purchase", {
+    transaction_id: getRandomTenDigitNumber(),
+    // Sum of (price * quantity) for all items.
+    value: 1.0,
+    tax: 0.0,
+    shipping: 0.0,
+    currency: "EUR",
+    items: [
+     {
+      item_id: "SKU_12345",
+      item_name: "Stan and Friends Tee",
+      price: 1.0,
+      quantity: 1
+    }});
 </script>	
     </header>
     <main>
